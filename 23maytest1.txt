@@ -1,0 +1,221 @@
+1.
+SELECT e.name, j.job_title, d.dept_name
+FROM Employees e
+JOIN Jobs j ON e.job_id = j.job_id
+JOIN Departments d ON e.dept_id = d.dept_id;
+
+
+2.
+SELECT name, salary
+FROM Employees
+WHERE salary > (
+    SELECT AVG(salary)
+    FROM Employees
+    WHERE dept_id = (
+        SELECT dept_id
+        FROM Departments
+        WHERE dept_name = 'IT'
+    )
+);
+
+
+3. 
+SELECT d.dept_name, SUM(e.salary) AS total_salary
+FROM Employees e
+JOIN Departments d ON e.dept_id = d.dept_id
+GROUP BY d.dept_name;
+
+
+4. 
+SELECT d.dept_name,
+       COUNT(e.emp_id) AS total_employees,
+       AVG(e.salary) AS avg_salary
+FROM Employees e
+JOIN Departments d ON e.dept_id = d.dept_id
+GROUP BY d.dept_name
+HAVING COUNT(e.emp_id) > 2
+   AND AVG(e.salary) > 70000;
+
+5. 
+SELECT e.name AS employee_name,
+       m.name AS manager_name
+FROM Employees e
+LEFT JOIN Employees m
+ON e.manager_id = m.emp_id;
+
+6. 
+SELECT name, salary
+FROM Employees
+ORDER BY salary DESC
+LIMIT 3;
+
+
+7. 
+SELECT e.name, j.job_title, d.location
+FROM Employees e
+JOIN Jobs j ON e.job_id = j.job_id
+JOIN Departments d ON e.dept_id = d.dept_id
+WHERE j.job_title = 'Developer'
+  AND d.location = 'San Francisco';
+
+
+8. 
+SELECT YEAR(hire_date) AS hire_year,
+       COUNT(*) AS total_employees
+FROM Employees
+GROUP BY YEAR(hire_date)
+ORDER BY hire_year;
+
+
+9. 
+SELECT j.job_title,
+       MAX(e.salary) AS max_employee_salary
+FROM Employees e
+JOIN Jobs j ON e.job_id = j.job_id
+GROUP BY j.job_title
+HAVING MAX(e.salary) < 100000;
+
+
+10. 
+SELECT name
+FROM Employees
+WHERE dept_id = (
+    SELECT dept_id
+    FROM Employees
+    WHERE name = 'David'
+);
+
+
+11. 
+SELECT d.dept_name,
+       e.name AS employee_name
+FROM Departments d
+LEFT JOIN Employees e
+ON d.dept_id = e.dept_id;
+
+
+12. 
+SELECT name, salary, hire_date
+FROM Employees
+WHERE hire_date BETWEEN '2018-01-01' AND '2020-12-31'
+  AND salary > 60000;
+
+
+13.
+SELECT e1.name, e1.salary, e1.dept_id
+FROM Employees e1
+WHERE e1.salary > (
+    SELECT AVG(e2.salary)
+    FROM Employees e2
+    WHERE e2.dept_id = e1.dept_id
+);
+
+
+14. 
+SELECT e.name, j.job_title, e.salary
+FROM Employees e
+JOIN Jobs j ON e.job_id = j.job_id
+WHERE e.emp_id = 504;
+
+
+15. 
+SELECT manager_id,
+       MIN(salary) AS minimum_salary
+FROM Employees
+WHERE manager_id IS NOT NULL
+GROUP BY manager_id;
+
+
+16. 
+SELECT dept_name
+FROM Departments
+WHERE dept_id NOT IN (
+    SELECT e.dept_id
+    FROM Employees e
+    JOIN Jobs j ON e.job_id = j.job_id
+    WHERE j.job_title = 'Analyst'
+);
+
+
+17.
+SELECT MAX(salary) - MIN(salary) AS salary_difference
+FROM Employees;
+
+
+18. 
+SELECT e.name,
+       e.hire_date,
+       d.dept_name,
+       e.salary
+FROM Employees e
+JOIN Departments d
+ON e.dept_id = d.dept_id
+ORDER BY d.dept_name ASC,
+         e.salary DESC;
+
+
+19. 
+SELECT manager_id,
+       COUNT(emp_id) AS total_reports
+FROM Employees
+WHERE manager_id IS NOT NULL
+GROUP BY manager_id
+HAVING COUNT(emp_id) > 2;
+
+
+20. 
+SELECT name, salary
+FROM Employees
+WHERE salary = (
+    SELECT DISTINCT salary
+    FROM Employees
+    ORDER BY salary DESC
+    LIMIT 1 OFFSET 2
+);
+
+
+21.
+SELECT j.job_title,
+       COUNT(e.emp_id) AS employee_count
+FROM Jobs j
+LEFT JOIN Employees e
+ON j.job_id = e.job_id
+GROUP BY j.job_title;
+
+
+22. 
+SELECT e.name, d.dept_name
+FROM Employees e
+JOIN Departments d
+ON e.dept_id = d.dept_id
+WHERE d.dept_name = 'Finance'
+  AND e.name LIKE '%i%';
+
+
+23. 
+SELECT d.dept_name,
+       SUM(e.salary * 0.10) AS total_bonus
+FROM Employees e
+JOIN Departments d
+ON e.dept_id = d.dept_id
+GROUP BY d.dept_name;
+
+
+24.
+SELECT dept_name
+FROM Departments
+WHERE dept_id = (
+    SELECT dept_id
+    FROM Employees
+    GROUP BY dept_id
+    ORDER BY SUM(salary) DESC
+    LIMIT 1
+);
+
+
+25. 
+SELECT e.name AS employee_name
+FROM Employees e
+JOIN Employees m
+ON e.manager_id = m.emp_id
+WHERE m.name = 'Charlie';
