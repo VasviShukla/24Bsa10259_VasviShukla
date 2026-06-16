@@ -1,0 +1,596 @@
+rs.status()
+{
+  set: 'myReplSet',
+  date: 2026-06-10T15:47:06.622Z,
+  myState: 1,
+  term: Long('2'),
+  syncSourceHost: '',
+  syncSourceId: -1,
+  heartbeatIntervalMillis: Long('2000'),
+  majorityVoteCount: 2,
+  writeMajorityCount: 2,
+  votingMembersCount: 3,
+  writableVotingMembersCount: 3,
+  optimes: {
+    lastCommittedOpTime: { ts: Timestamp({ t: 1781106422, i: 1 }), t: Long('2') },
+    lastCommittedWallTime: 2026-06-10T15:47:02.450Z,
+    readConcernMajorityOpTime: { ts: Timestamp({ t: 1781106422, i: 1 }), t: Long('2') },
+    appliedOpTime: { ts: Timestamp({ t: 1781106422, i: 1 }), t: Long('2') },
+    durableOpTime: { ts: Timestamp({ t: 1781106422, i: 1 }), t: Long('2') },
+    writtenOpTime: { ts: Timestamp({ t: 1781106422, i: 1 }), t: Long('2') },
+    lastAppliedWallTime: 2026-06-10T15:47:02.450Z,
+    lastDurableWallTime: 2026-06-10T15:47:02.450Z,
+    lastWrittenWallTime: 2026-06-10T15:47:02.450Z
+  },
+  lastStableRecoveryTimestamp: Timestamp({ t: 1781106372, i: 1 }),
+  electionCandidateMetrics: {
+    lastElectionReason: 'stepUpRequestSkipDryRun',
+    lastElectionDate: 2026-06-10T15:45:42.410Z,
+    electionTerm: Long('2'),
+    lastCommittedOpTimeAtElection: { ts: Timestamp({ t: 1781106335, i: 1 }), t: Long('1') },
+    lastSeenWrittenOpTimeAtElection: { ts: Timestamp({ t: 1781106335, i: 1 }), t: Long('1') },
+    lastSeenOpTimeAtElection: { ts: Timestamp({ t: 1781106335, i: 1 }), t: Long('1') },
+    numVotesNeeded: 2,
+    priorityAtElection: 1,
+    electionTimeoutMillis: Long('10000'),
+    priorPrimaryMemberId: 0,
+    numCatchUpOps: Long('0'),
+    newTermStartDate: 2026-06-10T15:45:42.442Z,
+    wMajorityWriteAvailabilityDate: 2026-06-10T15:45:42.951Z
+  },
+  electionParticipantMetrics: {
+    votedForCandidate: true,
+    electionTerm: Long('1'),
+    lastVoteDate: 2026-06-10T15:08:20.955Z,
+    electionCandidateMemberId: 0,
+    voteReason: '',
+    lastWrittenOpTimeAtElection: { ts: Timestamp({ t: 1781104089, i: 1 }), t: Long('-1') },
+    maxWrittenOpTimeInSet: { ts: Timestamp({ t: 1781104089, i: 1 }), t: Long('-1') },
+    lastAppliedOpTimeAtElection: { ts: Timestamp({ t: 1781104089, i: 1 }), t: Long('-1') },
+    maxAppliedOpTimeInSet: { ts: Timestamp({ t: 1781104089, i: 1 }), t: Long('-1') },
+    priorityAtElection: 1
+  },
+  members: [
+    {
+      _id: 0,
+      name: 'localhost:27017',
+      health: 0,
+      state: 8,
+      stateStr: '(not reachable/healthy)',
+      uptime: 0,
+      optime: { ts: Timestamp({ t: 0, i: 0 }), t: Long('-1') },
+      optimeDurable: { ts: Timestamp({ t: 0, i: 0 }), t: Long('-1') },
+      optimeWritten: { ts: Timestamp({ t: 0, i: 0 }), t: Long('-1') },
+      optimeDate: 1970-01-01T00:00:00.000Z,
+      optimeDurableDate: 1970-01-01T00:00:00.000Z,
+      optimeWrittenDate: 1970-01-01T00:00:00.000Z,
+      lastAppliedWallTime: 2026-06-10T15:45:52.444Z,
+      lastDurableWallTime: 2026-06-10T15:45:52.444Z,
+      lastWrittenWallTime: 2026-06-10T15:45:52.444Z,
+      lastHeartbeat: 2026-06-10T15:47:05.528Z,
+      lastHeartbeatRecv: 2026-06-10T15:45:57.441Z,
+      pingMs: Long('0'),
+      lastHeartbeatMessage: 'Error connecting to localhost:27017 (127.0.0.1:27017) :: caused by :: onInvoke :: caused by :: No connection could be made because the target machine actively refused it.',
+      syncSourceHost: '',
+      syncSourceId: -1,
+      infoMessage: '',
+      configVersion: 1,
+      configTerm: 2
+    },
+    {
+      _id: 1,
+      name: 'localhost:27018',
+      health: 1,
+      state: 1,
+      stateStr: 'PRIMARY',
+      uptime: 2492,
+      optime: { ts: Timestamp({ t: 1781106422, i: 1 }), t: Long('2') },
+      optimeDate: 2026-06-10T15:47:02.000Z,
+      optimeWritten: { ts: Timestamp({ t: 1781106422, i: 1 }), t: Long('2') },
+      optimeWrittenDate: 2026-06-10T15:47:02.000Z,
+      lastAppliedWallTime: 2026-06-10T15:47:02.450Z,
+      lastDurableWallTime: 2026-06-10T15:47:02.450Z,
+      lastWrittenWallTime: 2026-06-10T15:47:02.450Z,
+      syncSourceHost: '',
+      syncSourceId: -1,
+      infoMessage: '',
+      electionTime: Timestamp({ t: 1781106342, i: 1 }),
+      electionDate: 2026-06-10T15:45:42.000Z,
+      configVersion: 1,
+      configTerm: 2,
+      self: true,
+      lastHeartbeatMessage: ''
+    },
+    {
+      _id: 2,
+      name: 'localhost:27019',
+      health: 1,
+      state: 2,
+      stateStr: 'SECONDARY',
+      uptime: 2336,
+      optime: { ts: Timestamp({ t: 1781106422, i: 1 }), t: Long('2') },
+      optimeDurable: { ts: Timestamp({ t: 1781106422, i: 1 }), t: Long('2') },
+      optimeWritten: { ts: Timestamp({ t: 1781106422, i: 1 }), t: Long('2') },
+      optimeDate: 2026-06-10T15:47:02.000Z,
+      optimeDurableDate: 2026-06-10T15:47:02.000Z,
+      optimeWrittenDate: 2026-06-10T15:47:02.000Z,
+      lastAppliedWallTime: 2026-06-10T15:47:02.450Z,
+      lastDurableWallTime: 2026-06-10T15:47:02.450Z,
+      lastWrittenWallTime: 2026-06-10T15:47:02.450Z,
+      lastHeartbeat: 2026-06-10T15:47:05.420Z,
+      lastHeartbeatRecv: 2026-06-10T15:47:05.002Z,
+      pingMs: Long('0'),
+      lastHeartbeatMessage: '',
+      syncSourceHost: 'localhost:27018',
+      syncSourceId: 1,
+      infoMessage: '',
+      configVersion: 1,
+      configTerm: 2
+    }
+  ],
+  ok: 1,
+  '$clusterTime': {
+    clusterTime: Timestamp({ t: 1781106422, i: 1 }),
+    signature: {
+      hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+      keyId: Long('0')
+    }
+  },
+  operationTime: Timestamp({ t: 1781106422, i: 1 })
+}
+rs.status()
+{
+  set: 'myReplSet',
+  date: 2026-06-10T15:51:58.006Z,
+  myState: 1,
+  term: Long('2'),
+  syncSourceHost: '',
+  syncSourceId: -1,
+  heartbeatIntervalMillis: Long('2000'),
+  majorityVoteCount: 2,
+  writeMajorityCount: 2,
+  votingMembersCount: 3,
+  writableVotingMembersCount: 3,
+  optimes: {
+    lastCommittedOpTime: { ts: Timestamp({ t: 1781106712, i: 1 }), t: Long('2') },
+    lastCommittedWallTime: 2026-06-10T15:51:52.475Z,
+    readConcernMajorityOpTime: { ts: Timestamp({ t: 1781106712, i: 1 }), t: Long('2') },
+    appliedOpTime: { ts: Timestamp({ t: 1781106712, i: 1 }), t: Long('2') },
+    durableOpTime: { ts: Timestamp({ t: 1781106712, i: 1 }), t: Long('2') },
+    writtenOpTime: { ts: Timestamp({ t: 1781106712, i: 1 }), t: Long('2') },
+    lastAppliedWallTime: 2026-06-10T15:51:52.475Z,
+    lastDurableWallTime: 2026-06-10T15:51:52.475Z,
+    lastWrittenWallTime: 2026-06-10T15:51:52.475Z
+  },
+  lastStableRecoveryTimestamp: Timestamp({ t: 1781106672, i: 1 }),
+  electionCandidateMetrics: {
+    lastElectionReason: 'stepUpRequestSkipDryRun',
+    lastElectionDate: 2026-06-10T15:45:42.410Z,
+    electionTerm: Long('2'),
+    lastCommittedOpTimeAtElection: { ts: Timestamp({ t: 1781106335, i: 1 }), t: Long('1') },
+    lastSeenWrittenOpTimeAtElection: { ts: Timestamp({ t: 1781106335, i: 1 }), t: Long('1') },
+    lastSeenOpTimeAtElection: { ts: Timestamp({ t: 1781106335, i: 1 }), t: Long('1') },
+    numVotesNeeded: 2,
+    priorityAtElection: 1,
+    electionTimeoutMillis: Long('10000'),
+    priorPrimaryMemberId: 0,
+    numCatchUpOps: Long('0'),
+    newTermStartDate: 2026-06-10T15:45:42.442Z,
+    wMajorityWriteAvailabilityDate: 2026-06-10T15:45:42.951Z
+  },
+  electionParticipantMetrics: {
+    votedForCandidate: true,
+    electionTerm: Long('1'),
+    lastVoteDate: 2026-06-10T15:08:20.955Z,
+    electionCandidateMemberId: 0,
+    voteReason: '',
+    lastWrittenOpTimeAtElection: { ts: Timestamp({ t: 1781104089, i: 1 }), t: Long('-1') },
+    maxWrittenOpTimeInSet: { ts: Timestamp({ t: 1781104089, i: 1 }), t: Long('-1') },
+    lastAppliedOpTimeAtElection: { ts: Timestamp({ t: 1781104089, i: 1 }), t: Long('-1') },
+    maxAppliedOpTimeInSet: { ts: Timestamp({ t: 1781104089, i: 1 }), t: Long('-1') },
+    priorityAtElection: 1
+  },
+  members: [
+    {
+      _id: 0,
+      name: 'localhost:27017',
+      health: 1,
+      state: 2,
+      stateStr: 'SECONDARY',
+      uptime: 211,
+      optime: { ts: Timestamp({ t: 1781106712, i: 1 }), t: Long('2') },
+      optimeDurable: { ts: Timestamp({ t: 1781106712, i: 1 }), t: Long('2') },
+      optimeWritten: { ts: Timestamp({ t: 1781106712, i: 1 }), t: Long('2') },
+      optimeDate: 2026-06-10T15:51:52.000Z,
+      optimeDurableDate: 2026-06-10T15:51:52.000Z,
+      optimeWrittenDate: 2026-06-10T15:51:52.000Z,
+      lastAppliedWallTime: 2026-06-10T15:51:52.475Z,
+      lastDurableWallTime: 2026-06-10T15:51:52.475Z,
+      lastWrittenWallTime: 2026-06-10T15:51:52.475Z,
+      lastHeartbeat: 2026-06-10T15:51:56.535Z,
+      lastHeartbeatRecv: 2026-06-10T15:51:57.780Z,
+      pingMs: Long('0'),
+      lastHeartbeatMessage: '',
+      syncSourceHost: 'localhost:27018',
+      syncSourceId: 1,
+      infoMessage: '',
+      configVersion: 1,
+      configTerm: 2
+    },
+    {
+      _id: 1,
+      name: 'localhost:27018',
+      health: 1,
+      state: 1,
+      stateStr: 'PRIMARY',
+      uptime: 2784,
+      optime: { ts: Timestamp({ t: 1781106712, i: 1 }), t: Long('2') },
+      optimeDate: 2026-06-10T15:51:52.000Z,
+      optimeWritten: { ts: Timestamp({ t: 1781106712, i: 1 }), t: Long('2') },
+      optimeWrittenDate: 2026-06-10T15:51:52.000Z,
+      lastAppliedWallTime: 2026-06-10T15:51:52.475Z,
+      lastDurableWallTime: 2026-06-10T15:51:52.475Z,
+      lastWrittenWallTime: 2026-06-10T15:51:52.475Z,
+      syncSourceHost: '',
+      syncSourceId: -1,
+      infoMessage: '',
+      electionTime: Timestamp({ t: 1781106342, i: 1 }),
+      electionDate: 2026-06-10T15:45:42.000Z,
+      configVersion: 1,
+      configTerm: 2,
+      self: true,
+      lastHeartbeatMessage: ''
+    },
+    {
+      _id: 2,
+      name: 'localhost:27019',
+      health: 1,
+      state: 2,
+      stateStr: 'SECONDARY',
+      uptime: 2627,
+      optime: { ts: Timestamp({ t: 1781106712, i: 1 }), t: Long('2') },
+      optimeDurable: { ts: Timestamp({ t: 1781106712, i: 1 }), t: Long('2') },
+      optimeWritten: { ts: Timestamp({ t: 1781106712, i: 1 }), t: Long('2') },
+      optimeDate: 2026-06-10T15:51:52.000Z,
+      optimeDurableDate: 2026-06-10T15:51:52.000Z,
+      optimeWrittenDate: 2026-06-10T15:51:52.000Z,
+      lastAppliedWallTime: 2026-06-10T15:51:52.475Z,
+      lastDurableWallTime: 2026-06-10T15:51:52.475Z,
+      lastWrittenWallTime: 2026-06-10T15:51:52.475Z,
+      lastHeartbeat: 2026-06-10T15:51:57.525Z,
+      lastHeartbeatRecv: 2026-06-10T15:51:57.085Z,
+      pingMs: Long('0'),
+      lastHeartbeatMessage: '',
+      syncSourceHost: 'localhost:27018',
+      syncSourceId: 1,
+      infoMessage: '',
+      configVersion: 1,
+      configTerm: 2
+    }
+  ],
+  ok: 1,
+  '$clusterTime': {
+    clusterTime: Timestamp({ t: 1781106712, i: 1 }),
+    signature: {
+      hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+      keyId: Long('0')
+    }
+  },
+  operationTime: Timestamp({ t: 1781106712, i: 1 })
+}
+
+
+C:\Windows\System32>net stop MongoDB
+The MongoDB Server (MongoDB) service is stopping.
+The MongoDB Server (MongoDB) service was stopped successfully.
+
+
+C:\Windows\System32>sc query MongoDB
+
+SERVICE_NAME: MongoDB
+        TYPE               : 10  WIN32_OWN_PROCESS
+        STATE              : 1  STOPPED
+        WIN32_EXIT_CODE    : 0  (0x0)
+        SERVICE_EXIT_CODE  : 0  (0x0)
+        CHECKPOINT         : 0x0
+        WAIT_HINT          : 0x0
+
+C:\Windows\System32>rmdir /S /Q C:\data\config
+
+C:\Windows\System32>rmdir /S /Q C:\data\shard1
+
+C:\Windows\System32>rmdir /S /Q C:\data\shard2
+
+C:\Windows\System32>mkdir C:\data\config
+
+C:\Windows\System32>mkdir C:\data\shard1
+
+C:\Windows\System32>mkdir C:\data\shard2
+
+C:\Windows\System32>mongosh --port 27017
+Current Mongosh Log ID: 6a2997a2cab16f7473abc113
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.8.3
+Using MongoDB:          8.3.3
+Using Mongosh:          2.8.3
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2026-06-10T22:27:49.379+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+[direct: mongos] test> sh.addShard("shard1ReplSet/127.0.0.1:27011")
+{
+  shardAdded: 'shard1ReplSet',
+  ok: 1,
+  '$clusterTime': {
+    clusterTime: Timestamp({ t: 1781110814, i: 58 }),
+    signature: {
+      hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+      keyId: Long('0')
+    }
+  },
+  operationTime: Timestamp({ t: 1781110814, i: 58 })
+}
+[direct: mongos] test> sh.addShard("shard1ReplSet/127.0.0.1:27012")
+MongoServerError[IllegalOperation]: A shard named shard1ReplSet containing the replica set 'shard1ReplSet' already exists
+[direct: mongos] test> sh.addShard("shard2ReplSet/127.0.0.1:27012")
+{
+  shardAdded: 'shard2ReplSet',
+  ok: 1,
+  '$clusterTime': {
+    clusterTime: Timestamp({ t: 1781110860, i: 57 }),
+    signature: {
+      hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+      keyId: Long('0')
+    }
+  },
+  operationTime: Timestamp({ t: 1781110860, i: 57 })
+}
+[direct: mongos] test> sh.status()
+shardingVersion
+{
+  _id: ObjectId('6a2993d0f09f462c2fc8c373'),
+  clusterId: ObjectId('6a2993d0f09f462c2fc8c372')
+}
+---
+shards
+[
+  {
+    _id: 'shard1ReplSet',
+    host: 'shard1ReplSet/127.0.0.1:27011',
+    topologyTime: Timestamp({ t: 1781110814, i: 32 }),
+    replSetConfigVersion: Long('-1')
+  },
+  {
+    _id: 'shard2ReplSet',
+    host: 'shard2ReplSet/127.0.0.1:27012',
+    topologyTime: Timestamp({ t: 1781110860, i: 33 }),
+    replSetConfigVersion: Long('-1')
+  }
+]
+---
+active mongoses
+[ { '8.3.3': 1 } ]
+---
+autosplit
+{ 'Currently enabled': 'yes' }
+---
+balancer
+{
+  'Currently enabled': 'yes',
+  'Currently running': 'no',
+  'Failed balancer rounds in last 5 attempts': 0,
+  'Migration Results for the last 24 hours': 'No recent migrations'
+}
+---
+shardedDataDistribution
+[]
+---
+databases
+[
+  {
+    database: { _id: 'config', primary: 'config', partitioned: true },
+    collections: {}
+  }
+]
+[direct: mongos] test> sh.enableSharding("college")
+{
+  ok: 1,
+  '$clusterTime': {
+    clusterTime: Timestamp({ t: 1781111351, i: 22 }),
+    signature: {
+      hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+      keyId: Long('0')
+    }
+  },
+  operationTime: Timestamp({ t: 1781111351, i: 22 })
+}
+[direct: mongos] test> use college
+switched to db college
+[direct: mongos] college> db.students.createIndex({ student: 1 })
+student_1
+[direct: mongos] college> sh.shradCollection("college.students", {studentID: 1})
+TypeError: sh.shradCollection is not a function
+[direct: mongos] college> sh.shardCollection("college.students", {studentID: 1})
+{
+  collectionsharded: 'college.students',
+  ok: 1,
+  '$clusterTime': {
+    clusterTime: Timestamp({ t: 1781111879, i: 42 }),
+    signature: {
+      hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+      keyId: Long('0')
+    }
+  },
+  operationTime: Timestamp({ t: 1781111879, i: 41 })
+}
+[direct: mongos] college> sh.shardCollection("college.students", {studentId: 1})
+student_1
+[direct: mongos] college> sh.shradCollection("college.students", {studentID: 1})
+TypeError: sh.shradCollection is not a function
+[direct: mongos] college> sh.shardCollection("college.students", {studentID: 1})
+{
+  collectionsharded: 'college.students',
+  ok: 1,
+  '$clusterTime': {
+    clusterTime: Timestamp({ t: 1781111879, i: 42 }),
+    signature: {
+      hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+      keyId: Long('0')
+    }
+  },
+  operationTime: Timestamp({ t: 1781111879, i: 41 })
+}
+[direct: mongos] college> sh.shardCollection("college.students", {studentId: 1})
+MongoServerError[AlreadyInitialized]: Collection 'college.students' already exists with a different shard key. Requested { studentId: 1 } but found { studentID: 1 }
+[direct: mongos] college>
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+[direct: mongos] college> db.students.insertMany([
+|   { studentID: 1, name: "Aditya" },
+|   { studentID: 2, name: "Rahul" },
+|   { studentID: 3, name: "Priya" },
+|   { studentID: 4, name: "Sneha" }
+| ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6a299e7fcab16f7473abc114'),
+    '1': ObjectId('6a299e7fcab16f7473abc115'),
+    '2': ObjectId('6a299e7fcab16f7473abc116'),
+    '3': ObjectId('6a299e7fcab16f7473abc117')
+  }
+}
+[direct: mongos] college> db.students.find().pretty()
+[
+  {
+    _id: ObjectId('6a299e7fcab16f7473abc114'),
+    studentID: 1,
+    name: 'Aditya'
+  },
+  {
+    _id: ObjectId('6a299e7fcab16f7473abc115'),
+    studentID: 2,
+    name: 'Rahul'
+  },
+  {
+    _id: ObjectId('6a299e7fcab16f7473abc116'),
+    studentID: 3,
+    name: 'Priya'
+  },
+  {
+    _id: ObjectId('6a299e7fcab16f7473abc117'),
+    studentID: 4,
+    name: 'Sneha'
+  }
+]
+[direct: mongos] college> sh.status()
+shardingVersion
+{
+  _id: ObjectId('6a2993d0f09f462c2fc8c373'),
+  clusterId: ObjectId('6a2993d0f09f462c2fc8c372')
+}
+---
+shards
+[
+  {
+    _id: 'shard1ReplSet',
+    host: 'shard1ReplSet/127.0.0.1:27011',
+    topologyTime: Timestamp({ t: 1781110814, i: 32 }),
+    replSetConfigVersion: Long('-1')
+  },
+  {
+    _id: 'shard2ReplSet',
+    host: 'shard2ReplSet/127.0.0.1:27012',
+    topologyTime: Timestamp({ t: 1781110860, i: 33 }),
+    replSetConfigVersion: Long('-1')
+  }
+]
+---
+active mongoses
+[ { '8.3.3': 1 } ]
+---
+autosplit
+{ 'Currently enabled': 'yes' }
+---
+balancer
+{
+  'Currently enabled': 'yes',
+  'Currently running': 'no',
+  'Failed balancer rounds in last 5 attempts': 0,
+  'Migration Results for the last 24 hours': 'No recent migrations'
+}
+---
+shardedDataDistribution
+[
+  {
+    ns: 'config.system.sessions',
+    shards: [
+      {
+        shardName: 'shard1ReplSet',
+        numOrphanedDocs: 0,
+        numOwnedDocuments: 17,
+        ownedSizeBytes: 1683,
+        orphanedSizeBytes: 0
+      }
+    ]
+  },
+  {
+    ns: 'college.students',
+    shards: [
+      {
+        shardName: 'shard2ReplSet',
+        numOrphanedDocs: 0,
+        numOwnedDocuments: 4,
+        ownedSizeBytes: 212,
+        orphanedSizeBytes: 0
+      }
+    ]
+  }
+]
+---
+databases
+[
+  {
+    database: {
+      _id: 'college',
+      primary: 'shard2ReplSet',
+      version: {
+        uuid: UUID('373ddd55-9a03-46f5-bc3c-8256f254559c'),
+        timestamp: Timestamp({ t: 1781111351, i: 10 }),
+        lastMod: 1
+      }
+    },
+    collections: {
+      'college.students': {
+        shardKey: { studentID: 1 },
+        unique: false,
+        balancing: true,
+        allowMigrations: true,
+        chunkMetadata: [ { shard: 'shard2ReplSet', nChunks: 1 } ],
+        chunks: [
+          { min: { studentID: MinKey() }, max: { studentID: MaxKey() }, 'on shard': 'shard2ReplSet', 'last modified': Timestamp({ t: 1, i: 0 }) }
+        ],
+        tags: []
+      }
+    }
+  },
+  {
+    database: { _id: 'config', primary: 'config', partitioned: true },
+    collections: {
+      'config.system.sessions': {
+        shardKey: { _id: 1 },
+        unique: false,
+        balancing: true,
+        allowMigrations: true,
+        chunkMetadata: [ { shard: 'shard1ReplSet', nChunks: 1 } ],
+        chunks: [
+          { min: { _id: MinKey() }, max: { _id: MaxKey() }, 'on shard': 'shard1ReplSet', 'last modified': Timestamp({ t: 1, i: 0 }) }
+        ],
+        tags: []
+      }
+    }
+  }
+]
+
