@@ -45,7 +45,7 @@ stayease-api/
 └── server.js
 ```
 
----
+
 
 ## 🔗 Entity Relationships
 
@@ -58,41 +58,6 @@ stayease-api/
 
 ---
 
-## 🚀 Getting Started
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/your-username/stayease-api.git
-cd stayease-api
-```
-
-### 2. Install dependencies
-```bash
-npm install
-```
-
-### 3. Setup environment variables
-```bash
-cp .env.example .env
-```
-Edit `.env` with your MongoDB URI:
-```
-PORT=5000
-MONGO_URI=mongodb://localhost:27017/stayeasedb
-```
-
-### 4. Run the server
-```bash
-# Development (auto-restart)
-npm run dev
-
-# Production
-npm start
-```
-
-Server runs at: `http://localhost:5000`
-
----
 
 ## 📡 API Endpoints
 
